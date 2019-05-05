@@ -1,0 +1,43 @@
+//@import '../../node_modules/bulma/bulma.sass';
+@import '~bulma/bulma.sass';
+
+html {
+	color: red;
+	background-color: #F5F5F5;
+	text-align: center;
+	img {
+		border: 1px solid white;
+		border-radius: 50%;
+		background-color: #DADADA;
+		padding: 1em;
+	}
+}
+
+// Las transiciones de vue comienxan por un nombre
+// seguido si esta en modo entrada o salida
+// finalmente la posicion
+// .move-enter: Momento instantaneo en que inicia la entrada de la animacipon
+// .move-enter-active: La transicion de entrada esta en modo activo (se esta ejecutando);
+// .move-enter-to: La transicion de entrada a terminado;
+
+// Para este caso tanto entrada como salida activo esta el componente en la posicion 0
+.move-enter-active, .move-leave-active {
+	transform: translateX(0);
+	transition: all .3s linear;
+}
+// Cuando comienza la transicion o termina, el componente no se miestra en pantalla
+.move-enter, .move-leave-to {
+	transform: translateX(100%);
+}
+
+
+
+// Para este caso tanto entrada como salida activo esta el componente en la posicion 0
+.fade-enter-active, .fade-leave-active {
+	transform: scale(1);
+	transition: all .8s linear;
+}
+// Cuando comienza la transicion o termina, el componente no se miestra en pantalla
+.fade-enter, .fade-leave-to {
+	transform: scale(0);
+}
